@@ -1,0 +1,5 @@
+# Allow all files in this repo
+!*.md
+!*.rb
+!*/
+!.gitignore
