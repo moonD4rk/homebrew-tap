@@ -1,5 +1,455 @@
-# Allow all files in this repo
+# =============================================================================
+# Global Gitignore - Whitelist-Ready Template
+# =============================================================================
+# Usage:
+#   1. Global: Keep as-is, blocks everything by default
+#   2. Per-project: Copy to project, remove the "# MASTER BLOCK" section,
+#      then add whitelist rules with "!" prefix
+#
+# Example whitelist for a Node.js project:
+#   !*.js
+#   !*.ts
+#   !*.json
+#   !*.md
+#   !*/
+# =============================================================================
+
+# =============================================================================
+# Operating Systems
+# =============================================================================
+
+# macOS
+.DS_Store
+.DS_Store?
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.Trashes
+._*
+.fseventsd
+.TemporaryItems
+.DocumentRevisions-V100
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+Icon?
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.stackdump
+*.lnk
+
+# Linux
+.directory
+.Trash-*
+.nfs*
+
+# =============================================================================
+# Editors & IDEs
+# =============================================================================
+
+# JetBrains
+.idea/
+*.iml
+*.ipr
+*.iws
+.idea_modules/
+atlassian-ide-plugin.xml
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/
+*.vsix
+
+# Vim / Neovim
+*.swp
+*.swo
+*.swn
+.netrwhist
+tags
+Session.vim
+
+# Emacs
+\#*\#
+.#*
+*.elc
+auto-save-list
+tramp
+.org-id-locations
+*_flymake.*
+flycheck_*.el
+.dir-locals.el
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Eclipse
+.project
+.classpath
+.settings/
+.metadata/
+*.launch
+
+# Xcode
+*.xcuserstate
+xcuserdata/
+DerivedData/
+*.moved-aside
+*.hmap
+*.ipa
+
+# =============================================================================
+# Logs & Temporary Files
+# =============================================================================
+
+*.log
+*.log.*
+logs/
+log/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+
+# Temporary
+*.tmp
+*.temp
+*.bak
+*.backup
+*.old
+*.orig
+*.rej
+*~
+*.BACKUP.*
+*.BASE.*
+*.LOCAL.*
+*.REMOTE.*
+
+# Cache
+.cache/
+*.cache
+.parcel-cache/
+.eslintcache
+.stylelintcache
+
+# =============================================================================
+# Sensitive & Credential Files (NEVER track these)
+# =============================================================================
+
+# Environment
+.env
+.env.*
+.envrc
+*.env
+
+# Keys & Certificates
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+
+# Credentials
+credentials.json
+secrets.json
+secret.json
+service-account*.json
+*-credentials.json
+*_credentials.json
+*-secret.json
+*_secret.json
+.netrc
+.npmrc
+.pypirc
+
+# Cloud
+.aws/credentials
+.s3cfg
+.gcloud/
+application_default_credentials.json
+
+# =============================================================================
+# Database Files
+# =============================================================================
+
+*.sqlite
+*.sqlite3
+*.sqlite-shm
+*.sqlite-wal
+*.db
+*.db-journal
+*.ldb
+*.mdb
+
+# =============================================================================
+# Binary & Compiled Files
+# =============================================================================
+
+# C/C++
+*.o
+*.obj
+*.a
+*.lib
+
+# Libraries
+*.so
+*.so.*
+*.dylib
+*.dll
+
+# Executables
+*.exe
+*.out
+*.app
+*.com
+*.class
+
+# Debug
+*.dSYM/
+*.su
+*.pdb
+
+# =============================================================================
+# Archives & Packages
+# =============================================================================
+
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.tar.bz2
+*.tar.xz
+*.rar
+*.7z
+*.gz
+*.bz2
+*.xz
+*.iso
+*.dmg
+*.pkg
+*.deb
+*.rpm
+*.msi
+*.cab
+*.jar
+*.war
+*.ear
+
+# =============================================================================
+# Media Files
+# =============================================================================
+
+# Video
+*.mp4
+*.avi
+*.mov
+*.mkv
+*.wmv
+*.flv
+*.webm
+*.mpg
+*.mpeg
+*.m4v
+*.ogv
+
+# Audio
+*.mp3
+*.wav
+*.flac
+*.aac
+*.ogg
+*.wma
+*.m4a
+
+# Images (large formats)
+*.psd
+*.ai
+*.sketch
+*.fig
+*.raw
+*.cr2
+*.nef
+*.tiff
+*.bmp
+*.gif
+
+# Fonts
+*.ttf
+*.otf
+*.woff
+*.woff2
+*.eot
+
+# =============================================================================
+# Build & Dependencies (commonly generated)
+# =============================================================================
+
+# Build outputs
+build/
+dist/
+out/
+target/
+bin/
+obj/
+
+# Dependencies
+node_modules/
+vendor/
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.tox/
+.nox/
+.mypy_cache/
+.hypothesis/
+
+# Coverage
+coverage/
+.coverage
+*.lcov
+.nyc_output/
+htmlcov/
+
+# Documentation builds
+docs/_build/
+site/
+public/
+
+# =============================================================================
+# Code & Config Files (blocked globally, whitelist per-project)
+# =============================================================================
+
+# JavaScript / TypeScript
+*.js
+*.jsx
+*.ts
+*.tsx
+*.mjs
+*.cjs
+
+# Web
+*.html
+*.htm
+*.css
+*.scss
+*.sass
+*.less
+
+# Data formats
+*.json
+*.yaml
+*.yml
+*.toml
+*.xml
+*.csv
+*.tsv
+*.ndjson
+*.jsonl
+
+# Documentation
+*.md
+*.rst
+*.txt
+*.adoc
+
+# Shell & Scripts
+*.sh
+*.bash
+*.zsh
+*.fish
+*.ps1
+*.bat
+*.cmd
+
+# Programming languages
+*.py
+*.rb
+*.php
+*.go
+*.rs
+*.java
+*.kt
+*.scala
+*.c
+*.cpp
+*.h
+*.hpp
+*.cs
+*.swift
+*.m
+*.mm
+*.lua
+*.pl
+*.r
+*.R
+*.jl
+
+# Config files
+*.conf
+*.cfg
+*.ini
+*.config
+Makefile
+Dockerfile
+Vagrantfile
+Gemfile
+Rakefile
+Brewfile
+Procfile
+
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+Pipfile.lock
+poetry.lock
+Cargo.lock
+Gemfile.lock
+composer.lock
+go.sum
+
+# =============================================================================
+# MASTER BLOCK - Ignore Everything Else
+# =============================================================================
+# Remove this section when copying to a project, then add whitelist rules
+# Example:
+#   !*.go
+#   !go.mod
+#   !go.sum
+#   !*.md
+#   !*/
+# =============================================================================
+
 !*.md
-!*.rb
+!Formula/*.rb
 !*/
 !.gitignore
+!.github/workflows/*.yaml
+!.github/workflows/*.yml
+
+# Keep directory structure visible
+!*/
