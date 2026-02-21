@@ -1,0 +1,46 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "Formula/*.rb"
+  pull_request:
+    branches: [main]
+    paths:
+      - "Formula/*.rb"
+
+jobs:
+  lint:
+    name: Audit Formulas
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Tap locally
+        run: |
+          mkdir -p "$(brew --repository)/Library/Taps/moond4rk/homebrew-tap"
+          ln -s "$GITHUB_WORKSPACE/Formula" "$(brew --repository)/Library/Taps/moond4rk/homebrew-tap/Formula"
+
+      - name: Audit changed formulas
+        run: |
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            changed=$(git diff --name-only --diff-filter=ACMR ${{ github.event.pull_request.base.sha }} ${{ github.sha }} -- 'Formula/*.rb' | xargs -I{} basename {} .rb)
+          else
+            changed=$(git diff --name-only --diff-filter=ACMR HEAD~1 HEAD -- 'Formula/*.rb' | xargs -I{} basename {} .rb)
+          fi
+
+          if [ -z "$changed" ]; then
+            echo "No formula changes detected"
+            exit 0
+          fi
+
+          exit_code=0
+          for formula in $changed; do
+            echo "==> Auditing $formula..."
+            brew audit --formula "moond4rk/tap/$formula" || exit_code=1
+            echo "==> Checking style for $formula..."
+            brew style --formula "moond4rk/tap/$formula" || exit_code=1
+          done
+          exit $exit_code
