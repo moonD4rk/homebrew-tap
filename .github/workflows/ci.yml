@@ -17,6 +17,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
 
       - name: Tap locally
         run: |
@@ -27,8 +29,10 @@ jobs:
         run: |
           if [ "${{ github.event_name }}" = "pull_request" ]; then
             changed=$(git diff --name-only --diff-filter=ACMR ${{ github.event.pull_request.base.sha }} ${{ github.sha }} -- 'Formula/*.rb' | xargs -I{} basename {} .rb)
-          else
+          elif git rev-parse HEAD~1 >/dev/null 2>&1; then
             changed=$(git diff --name-only --diff-filter=ACMR HEAD~1 HEAD -- 'Formula/*.rb' | xargs -I{} basename {} .rb)
+          else
+            changed=$(ls Formula/*.rb 2>/dev/null | xargs -I{} basename {} .rb)
           fi
 
           if [ -z "$changed" ]; then
