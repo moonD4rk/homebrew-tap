@@ -5,23 +5,23 @@
 class Things3 < Formula
   desc "CLI for Things 3 task manager on macOS"
   homepage "https://github.com/moonD4rk/things3"
-  version "0.5.3"
+  version "0.5.4"
   license "Apache-2.0"
   depends_on :macos
 
   if Hardware::CPU.intel?
-    url "https://github.com/moonD4rk/things3/releases/download/v0.5.3/things3_macos_intel.tar.gz"
-    sha256 "13079bb5f4a1e64cb523fe0c996a2e9c924a2ca811c1cd0656035f7e853de5b1"
+    url "https://github.com/moonD4rk/things3/releases/download/v0.5.4/things3_macos_intel.tar.gz"
+    sha256 "1bf70b0c46977efe159065323b09084d8142f5597fce0e3c7787e5baed701239"
 
-    def install
+    define_method(:install) do
       bin.install "things3"
     end
   end
   if Hardware::CPU.arm?
-    url "https://github.com/moonD4rk/things3/releases/download/v0.5.3/things3_macos_m1.tar.gz"
-    sha256 "21d5d963d9b12524af3d860e9dd2fa57ce44d8588d4c208a29cafa9973b378f5"
+    url "https://github.com/moonD4rk/things3/releases/download/v0.5.4/things3_macos_m1.tar.gz"
+    sha256 "08c14e2091c903f5f72c6904670e1dc4d0d9a0f38425d5b68947d9df691e4f72"
 
-    def install
+    define_method(:install) do
       bin.install "things3"
     end
   end
