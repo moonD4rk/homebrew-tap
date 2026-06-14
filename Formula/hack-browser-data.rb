@@ -5,21 +5,21 @@
 class HackBrowserData < Formula
   desc "Extract and decrypt browser data from multiple browsers"
   homepage "https://github.com/moonD4rk/HackBrowserData"
-  version "1.0.0"
+  version "1.1.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/moonD4rk/HackBrowserData/releases/download/v1.0.0/hack-browser-data-osx-64bit.tar.gz"
-      sha256 "b024b713634593ed1e0a28a21d7f2cbd1a7261a1d5e0561d123f300268d03fd2"
+      url "https://github.com/moonD4rk/HackBrowserData/releases/download/v1.1.0/hack-browser-data-osx-64bit.tar.gz"
+      sha256 "1de4186fcd7686d4779d20f2d768604ef84f575f1f775604b6114c8affb4233f"
 
       define_method(:install) do
         bin.install "hack-browser-data"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/moonD4rk/HackBrowserData/releases/download/v1.0.0/hack-browser-data-osx-arm64.tar.gz"
-      sha256 "00fe1b9cc6e620c3df784a47fc39d25f0e7dac5e18ea4617e6725912a7cf3a3c"
+      url "https://github.com/moonD4rk/HackBrowserData/releases/download/v1.1.0/hack-browser-data-osx-arm64.tar.gz"
+      sha256 "0e0c87fb976f0cb70231d111f2082f12d7d504560ee4926311b38f68d9b398e0"
 
       define_method(:install) do
         bin.install "hack-browser-data"
@@ -29,22 +29,22 @@ class HackBrowserData < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/moonD4rk/HackBrowserData/releases/download/v1.0.0/hack-browser-data-linux-64bit.tar.gz"
-      sha256 "9d75108d774675195f35a58ee9072b0a0fd8311cfb159fe08e241e647a27cb06"
+      url "https://github.com/moonD4rk/HackBrowserData/releases/download/v1.1.0/hack-browser-data-linux-64bit.tar.gz"
+      sha256 "7fed7b243494bf64e81a63df9510c474c95cefd3e1d025ce7dba16fe2c04c594"
       define_method(:install) do
         bin.install "hack-browser-data"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/moonD4rk/HackBrowserData/releases/download/v1.0.0/hack-browser-data-linux-arm.tar.gz"
-      sha256 "e0d0c25bc5b476b3826a45232a058bc34363b13a043539f7eb0ac3be6b7a836e"
+      url "https://github.com/moonD4rk/HackBrowserData/releases/download/v1.1.0/hack-browser-data-linux-arm.tar.gz"
+      sha256 "c8d0dfe22999f7e021038bc45319b1933622fbc4eacd3adf07fab9b24f0adb2c"
       define_method(:install) do
         bin.install "hack-browser-data"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/moonD4rk/HackBrowserData/releases/download/v1.0.0/hack-browser-data-linux-arm64.tar.gz"
-      sha256 "40a7bb408f28727bd5b30574d071ea9ceee15a75c82a13b16a5c90c1cdc9d4bd"
+      url "https://github.com/moonD4rk/HackBrowserData/releases/download/v1.1.0/hack-browser-data-linux-arm64.tar.gz"
+      sha256 "d1e01923eb5861bbd16211353c496dda17843d0e5ba5886f561e27969de0ffc9"
       define_method(:install) do
         bin.install "hack-browser-data"
       end
