@@ -5,21 +5,21 @@
 class Ccstatus < Formula
   desc "Customizable status line formatter for Claude Code CLI"
   homepage "https://github.com/moonD4rk/ccstatus"
-  version "0.2.0"
+  version "0.3.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/moonD4rk/ccstatus/releases/download/v0.2.0/ccstatus_darwin_x86_64.tar.gz"
-      sha256 "be0459017142e4d2188d128caaea20b3ffaaca6f079c718008adbf3a99485666"
+      url "https://github.com/moonD4rk/ccstatus/releases/download/v0.3.0/ccstatus_darwin_x86_64.tar.gz"
+      sha256 "179336cb54ccc172fdeb9dace5d95e3187dc1d96b4e842837a73a0e8662d5b2f"
 
       define_method(:install) do
         bin.install "ccstatus"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/moonD4rk/ccstatus/releases/download/v0.2.0/ccstatus_darwin_arm64.tar.gz"
-      sha256 "0851ab72bc06a8f9431388d5966102730788d7d1e19ef23276f763236b83b364"
+      url "https://github.com/moonD4rk/ccstatus/releases/download/v0.3.0/ccstatus_darwin_arm64.tar.gz"
+      sha256 "9f08bb3ae24ea2d75bc2c2fff51f73cb2c9949c7d7f050a7a29f8d9668e424f9"
 
       define_method(:install) do
         bin.install "ccstatus"
@@ -29,15 +29,15 @@ class Ccstatus < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/moonD4rk/ccstatus/releases/download/v0.2.0/ccstatus_linux_x86_64.tar.gz"
-      sha256 "16af73846c3d3d32d0037efbc000e7991dcd4187b728d9013ff58485ff0c0501"
+      url "https://github.com/moonD4rk/ccstatus/releases/download/v0.3.0/ccstatus_linux_x86_64.tar.gz"
+      sha256 "82acc63ebf77abd83c44767e5abdf9d7edcc4cdf9ae53124569404ec61503979"
       define_method(:install) do
         bin.install "ccstatus"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/moonD4rk/ccstatus/releases/download/v0.2.0/ccstatus_linux_arm64.tar.gz"
-      sha256 "b0f16cd73aecf93c3fce7a39b6a3afd047be259ddddf13af30f34bab8fb30ff7"
+      url "https://github.com/moonD4rk/ccstatus/releases/download/v0.3.0/ccstatus_linux_arm64.tar.gz"
+      sha256 "eed6f4b09d15fd12f431c7fe348d31d0256f9fd3a3f8e30293cc2faebdd35740"
       define_method(:install) do
         bin.install "ccstatus"
       end
