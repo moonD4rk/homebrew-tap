@@ -5,21 +5,21 @@
 class Keychainbreaker < Formula
   desc "Extract credentials from macOS Keychain files"
   homepage "https://github.com/moonD4rk/keychainbreaker"
-  version "0.2.5"
+  version "0.2.6"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/moonD4rk/keychainbreaker/releases/download/v0.2.5/keychainbreaker_darwin_amd64.tar.gz"
-      sha256 "671c9c5881f14c1de59aca90cd99e74c4fc9773755bd1d95466553362a8bcefc"
+      url "https://github.com/moonD4rk/keychainbreaker/releases/download/v0.2.6/keychainbreaker_darwin_amd64.tar.gz"
+      sha256 "c00c2606978ce15a7d2137558c6f2ce3c12035c84f54d71ab7cb8108a77456e2"
 
       define_method(:install) do
         bin.install "keychainbreaker"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/moonD4rk/keychainbreaker/releases/download/v0.2.5/keychainbreaker_darwin_arm64.tar.gz"
-      sha256 "445b0543256f35cec347173fc92fd3aced79416cf60c7e6ff55a0c8d976fc1f4"
+      url "https://github.com/moonD4rk/keychainbreaker/releases/download/v0.2.6/keychainbreaker_darwin_arm64.tar.gz"
+      sha256 "4081aa0952c54ef9bc55b0a06cc7b2a55b201aa81dd41a7185a3dce034e46f2b"
 
       define_method(:install) do
         bin.install "keychainbreaker"
@@ -29,15 +29,15 @@ class Keychainbreaker < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/moonD4rk/keychainbreaker/releases/download/v0.2.5/keychainbreaker_linux_amd64.tar.gz"
-      sha256 "c84aee90c9b2858a1acc4b9100bbe3234c757ce323772d561fbd18461df36bae"
+      url "https://github.com/moonD4rk/keychainbreaker/releases/download/v0.2.6/keychainbreaker_linux_amd64.tar.gz"
+      sha256 "b3b0c2c2d59ec0e75e1888cfdfce566a6d40eeacf43f1a43df61685300980577"
       define_method(:install) do
         bin.install "keychainbreaker"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/moonD4rk/keychainbreaker/releases/download/v0.2.5/keychainbreaker_linux_arm64.tar.gz"
-      sha256 "bca4191b7694a5c8261ed167f803ebd5d0d0f2821aca843ab75562bde8a6949b"
+      url "https://github.com/moonD4rk/keychainbreaker/releases/download/v0.2.6/keychainbreaker_linux_arm64.tar.gz"
+      sha256 "a53902ec17a61539d07b0c8393214973b836b8195e6bdfa443d64f41067a204d"
       define_method(:install) do
         bin.install "keychainbreaker"
       end
