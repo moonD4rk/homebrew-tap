@@ -446,6 +446,8 @@ go.sum
 
 !*.md
 !Formula/*.rb
+!Casks/*.rb
+!tap_migrations.json
 !*/
 !.gitignore
 !.github/workflows/*.yaml
